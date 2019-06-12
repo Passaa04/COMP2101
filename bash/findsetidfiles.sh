@@ -23,6 +23,4 @@ echo ""
 
 echo "10 largest files in the system:"
 echo "============="
-find / 2>/dev/null -type f -executable ls -l --block-size=M {} + | sort -rh -k 5 | head -n 10 | awk '{print $5, $3, $9}'
-du -ha | sort -h -r | head -n 10
-echo ""
+find / 2>/dev/null -type f -exec ls -l --block-size=M {} + | sort -rh -k 5 | head -n 10 | awk '{print $5, $3, $9}'
